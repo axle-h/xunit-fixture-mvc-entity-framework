@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Title>xunit.fixture.mvc.entityframework</Title>
+    <PackageId>xunit.fixture.mvc.entityframework</PackageId>
+    <Authors>Alex Haslehurst</Authors>
+    <Description>MVC functional tests with a fixture pattern for an Entity Framework Core database</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageTags>test testing fixture functional ef</PackageTags>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>true</IncludeSource>
+    <PackageProjectUrl>https://github.com/axle-h/xunit-fixture-mvc-entity-framework</PackageProjectUrl>
+    <IsPackable>true</IsPackable>
+    <OutputType>Library</OutputType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.2.6" />
+    <PackageReference Include="xunit.fixture.mvc" Version="2.2.43" />
+  </ItemGroup>
+
+</Project>
