@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.2.6" />
-    <PackageReference Include="xunit.fixture.mvc" Version="2.2.43" />
+    <PackageReference Include="xunit.fixture.mvc" Version="2.2.46" />
   </ItemGroup>
 
 </Project>
