@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <Title>xunit.fixture.mvc.entityframework</Title>
     <PackageId>xunit.fixture.mvc.entityframework</PackageId>
     <Authors>Alex Haslehurst</Authors>
@@ -17,8 +17,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.2.6" />
-    <PackageReference Include="xunit.fixture.mvc" Version="2.2.46" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.0" />
+    <PackageReference Include="xunit.fixture.mvc" Version="3.1.53" />
   </ItemGroup>
 
 </Project>

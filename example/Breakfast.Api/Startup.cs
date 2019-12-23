@@ -5,8 +5,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using Swashbuckle.AspNetCore.Swagger;
 
 namespace Breakfast.Api
 {
@@ -21,16 +22,16 @@ namespace Breakfast.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddControllers();
             services.AddSwaggerGen(c =>
                                    {
-                                       c.SwaggerDoc("v1", new Info { Title = "Breakfast API", Version = "v1" });
+                                       c.SwaggerDoc("v1", new OpenApiInfo { Title = "Breakfast API", Version = "v1" });
                                    });
 
             services.AddDbContext<BreakfastContext>(o => o.UseMySql(_mysqlConnectionString, mo => mo.ServerVersion(new Version(5, 7, 21), ServerType.MySql)));
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -40,8 +41,8 @@ namespace Breakfast.Api
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Breakfast API V1"));
 
-
-            app.UseMvc();
+            app.UseRouting();
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
         }
     }
 }
